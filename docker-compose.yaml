@@ -1,0 +1,26 @@
+version: "1"
+services:
+  consumer:
+    container_name: consumer
+    build: ./consumer
+    ports: 
+      - 4002:4002
+    volumes: 
+      - ./consumer:/app
+    entrypoint: ["nodemon", "-L", "/app/index.js"]  
+    networks:
+      - em
+  producer:
+    container_name: producer
+    build: ./producer
+    ports: 
+      - 4001:4001
+    volumes: 
+      - ./producer:/app
+    networks:
+      - em      
+    entrypoint: ["nodemon", "-L", "/app/index.js"]  
+networks:
+  em:
+    external: true
+
