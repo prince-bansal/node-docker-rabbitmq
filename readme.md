@@ -9,3 +9,11 @@ RUN THESE COMMANDS:
 -- docker-compose up        -- to up the containers
 -- docker network connect em rabb
 
+
+
+
+second version
+
+added rabbitmq in compose only now just run docker-compose
+
+ADDED HEALTH CHECKUPS so that producer and consumer only run after the rabbit mq is up and running
